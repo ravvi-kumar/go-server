@@ -14,6 +14,8 @@ func main() {
 	}
 	r := routes.SetupRoutes(app)
 
+	app.Logger.Printf("server is running")
+
 	server := &http.Server{
 		Addr:    ":8080",
 		Handler: r,
