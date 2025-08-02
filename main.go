@@ -16,6 +16,10 @@ func main() {
 
 	app.Logger.Printf("server is running")
 
+	r.Get("/test", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("test ok"))
+	})
+
 	server := &http.Server{
 		Addr:    ":8080",
 		Handler: r,
