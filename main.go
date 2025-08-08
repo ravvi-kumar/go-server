@@ -12,6 +12,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	defer app.DB.Close()
+
 	r := routes.SetupRoutes(app)
 
 	app.Logger.Printf("server is running")
